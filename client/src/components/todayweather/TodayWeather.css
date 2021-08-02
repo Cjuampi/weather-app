@@ -1,0 +1,33 @@
+.containerTW{
+    width: 375px;
+    height: 100vh;
+    background-color: #1E213A;
+    
+}
+.containerTW::before {
+    content: "";
+    background-image: url('../../assets/images/Cloud-background.png');
+    background-repeat: no-repeat;
+    background-size: 570px 326px;
+    background-position-y: 58px;
+    background-position-x: -93px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+}
+
+.containerHBttns {
+    display: flex;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 18px; 
+    justify-content: space-between;
+}
+
+.componentLBttn{
+    color:white;
+}
