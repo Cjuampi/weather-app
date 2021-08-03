@@ -6,22 +6,22 @@ import './TodayWeather.css'
 
 
 const TodayWeather = () => {
-    const { city, setCity } = useContext(valuesContext)
-/*     const [showSearchC, setshowSearchC] = useState(false)
+    //city has the woeid
+    const { city, setCity, dataWeather,setDataWeather } = useContext(valuesContext)
+    const [showSearchC, setshowSearchC] = useState(false)
 
     const changeState = () => {
         setshowSearchC(true)
     }
 
     const searchMatches = async (city) => {
-        let result = await axios.get(`/searchMatches/${city}`)
+        let result = await axios.get(`/getWeatherCity/${city}`)
         console.log(result.data)
         return result.data
     }
     
     const renderSearchCity = () => {
-        console.log('renderizo')
-        return <SearchCity />
+        
     }
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const TodayWeather = () => {
             console.log('entro if showSearchC')
             renderSearchCity()
         }
-    }, [showSearchC]) */
+    }, [showSearchC])
 
     return (
         <section className='containerTW'>
