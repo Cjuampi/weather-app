@@ -1,0 +1,11 @@
+.containerNW{
+    background-color: #100E1D;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media screen and (min-width: 700px) {
+    .containerNW {
+        width: calc(100vw - 375px);
+    }
+  }

@@ -1,0 +1,18 @@
+.containerWM{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nextWeather{
+    /* z-index: -40; */
+    background-color: #100E1D;
+}
+
+@media screen and (min-width: 700px) {
+    .containerWM {
+        /* display: flex; */
+        flex-direction: row;
+        flex-wrap:nowrap;
+    }
+  }
