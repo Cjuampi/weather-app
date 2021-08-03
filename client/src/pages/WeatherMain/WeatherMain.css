@@ -5,7 +5,7 @@
 }
 
 .nextWeather{
-    z-index: 10;
+    /* z-index: -40; */
     background-color: #100E1D;
 }
 

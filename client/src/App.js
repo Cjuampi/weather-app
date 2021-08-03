@@ -6,9 +6,10 @@ import { useState } from 'react';
 
 function App() {
   const [ city, setCity ] = useState('')
+  const [ searcher, setSearcher ] = useState(false)
   
   const cntxvalues = {
-    city,setCity
+    city,setCity,searcher,setSearcher
   }
 
   return (

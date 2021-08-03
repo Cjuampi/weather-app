@@ -1,0 +1,7 @@
+.containerWS{
+    width: 375px;
+    min-height: 100vh;
+    background-color: #1E213A;
+    /* display: none; */
+    /* z-index: 500; */
+}
