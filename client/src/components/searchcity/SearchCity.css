@@ -1,7 +1,38 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
 .containerWS{
     max-width: 414px;
     min-height: 100vh;
     background-color: #1E213A;
     /* display: none; */
     /* z-index: 500; */
+}
+.closeBttn{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.containerForm{
+    margin-top: 17px;
+}
+#inputSCity {
+    border: 1px solid #E7E7EB;
+    width: 252px;
+    height: 48px;
+    box-sizing: border-box;
+    background-color: #1E213A;
+    margin-right: 12px;
+    color:#E7E7EB;
+    font-size: 16px;
+    padding-left: 13px;
+}
+
+#submitBttn{
+    background-color: #3C47E9;
+    width: 86px;
+    height: 48px;
+    font-size: 16px;
+    color:#E7E7EB;
+    border: none;
 }
