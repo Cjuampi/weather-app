@@ -21,16 +21,22 @@
 } */
 
 .containerHBttns {
-    
     display: flex;
     padding-left: 11px;
     padding-right: 11px;
     padding-top: 18px; 
     justify-content: space-between;
+    align-items: center
 }
 
 .componentLBttn{
-    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40px;
+    height: 40px;
+    background-color:#6E707A;
+    border-radius: 50%;
 }
 
 .containerInfoT{

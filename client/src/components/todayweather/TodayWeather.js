@@ -45,7 +45,7 @@ const TodayWeather = () => {
                     <ButtonSearch />
                 </section>
                 <section className='componentLBttn'>
-                    <p>O</p>
+                    <span class="material-icons">my_location</span>
                 </section>
             </section>
             <section className='containerInfoT'>

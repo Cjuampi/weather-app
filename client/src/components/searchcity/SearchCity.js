@@ -49,11 +49,11 @@ const WeatherSearch = () =>{
     return(
         <section className='containerWS'>
             <section className='closeBttn'>
-                <span className="material-icons" onClick={activateSearch} >close</span>
+                <span className='material-icons' onClick={activateSearch} >close</span>
             </section>
             <section className='containerForm'>
                 <form onSubmit={onSubmitInput}>
-                    <input type='text' placeholder='Search Location' onChange={catchInput} id='inputSCity'/>
+                    <input type='text' placeholder='Search Location' onChange={catchInput} id='inputSCity' />
                     <input type='submit' value='Search' id='submitBttn'/>
                 </form>
             </section>
