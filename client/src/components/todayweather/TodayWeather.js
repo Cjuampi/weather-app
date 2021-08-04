@@ -1,4 +1,4 @@
-import React, { useContext,useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import axios from 'axios';
 import {valuesContext} from '../../contexts/weather.contexts'
 import ButtonSearch from '../searchButton/SearchButton'
@@ -8,14 +8,7 @@ import './TodayWeather.css'
 
 const TodayWeather = () => {
     //city has the woeid
-    const { city, setCity, dataWeather,setDataWeather } = useContext(valuesContext)
-    const [showSearchC, setshowSearchC] = useState(false)
-
-    const changeState = () => {
-        setshowSearchC(true)
-    }
-
-    console.log('images', window.location.origin + imagenes.sn.image )
+    const { city, dataWeather,setDataWeather } = useContext(valuesContext)
 
     const getDataCity = async () => {
         let result = await axios.get(`/getWeatherCity/${city}`)
@@ -23,9 +16,6 @@ const TodayWeather = () => {
         return result.data
     }
     
-    const renderSearchCity = () => {
-        console.log('el dataweather', dataWeather)
-    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -45,22 +35,22 @@ const TodayWeather = () => {
                     <ButtonSearch />
                 </section>
                 <section className='componentLBttn'>
-                    <span class="material-icons">my_location</span>
+                    <span className="material-icons">my_location</span>
                 </section>
             </section>
             <section className='containerInfoT'>
                 <section className='weatherImg'>
                     {/* {console.log('dataWeather----',dataWeather[0])} */}
-                    {dataWeather.length!=0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]}/>: null}
+                    {dataWeather.length!==0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]}/>: null}
                 </section>
                 <section className='theTemp'>
-                    {dataWeather.length!=0? <span>{Math.round(`${dataWeather.consolidated_weather[0].the_temp}`)}<span id='symbTem'>&#8451;</span></span>: null}
+                    {dataWeather.length!==0? <span>{Math.round(`${dataWeather.consolidated_weather[0].the_temp}`)}<span id='symbTem'>&#8451;</span></span>: null}
                 </section>
                 <section className='weatherText'>
-                    {dataWeather.length!=0? <span>{dataWeather.consolidated_weather[0].weather_state_name}</span>: null}
+                    {dataWeather.length!==0? <span>{dataWeather.consolidated_weather[0].weather_state_name}</span>: null}
                 </section>
                 <section className='weatherDate'>
-                    {dataWeather.length!=0? 
+                    {dataWeather.length!==0? 
                         <span>
                             Today · {new Date(dataWeather.consolidated_weather[0].applicable_date).toLocaleString("en-US", { weekday: "short" })}
                                     , {new Date(dataWeather.consolidated_weather[0].applicable_date).getDate() + " "} 
@@ -68,7 +58,8 @@ const TodayWeather = () => {
                         </span>: null}
                 </section>
                 <section className='weatherLocation'>
-                    {dataWeather.length!=0? <span>{dataWeather.title}</span>: null}
+                    {dataWeather.length!==0?<span className="material-icons">location_on</span>: null}
+                    {dataWeather.length!==0? <span>{dataWeather.title}</span>: null}
                 </section>
             </section>
         </section>

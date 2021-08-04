@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import City from '../cities/Cities'
 import './ListCities.css'
 

@@ -2,3 +2,12 @@
 .containerCities:hover{
     border: 1px solid #616475;
 }
+.nameCity >p{
+    margin: 0px;
+    padding-left: 12px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    color:#E7E7EB;
+    font-size: 16px;
+    font-weight: 600;
+}
