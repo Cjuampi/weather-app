@@ -17,7 +17,9 @@ const wApi = {
     getWeatherCity : async (req,res) => {
         //usermos el woeid
         const woeid = req.params.woeid
+        //console.log('el woeid', woeid)
         let result = await fetch(`https://www.metaweather.com/api/location/${woeid}`)
+        //console.log('el result', result)
         let data = await result.json()
         res.status(200).json(data)
     }
