@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import NextW from '../nextweatherlist/Nextweatherlist'
+import HightL from '../hightightsList/HightightsList'
 import { valuesContext } from '../../contexts/weather.contexts'
 import './NextWeather.css'
 
@@ -17,8 +18,9 @@ const NextWeather = () =>{
     }
 
     const renderTodayHL = () =>{
-        if(nextDaysData){
-            console.log('dtawHIGHTLIGHT:',nextDaysData)
+        if(nextDaysData.length!==0){
+            /* console.log('dtawHIGHTLIGHT:',nextDaysData) */
+            return <HightL data={nextDaysData[0]}/>
         }
     } 
 
@@ -42,7 +44,7 @@ const NextWeather = () =>{
                     <span>Today's Hightlights</span>
                 </section>
                 <section className='listHightLights'>
-                    <p>LA LISTA DE LOS Hightlights</p>
+                    {renderTodayHL()}
                 </section>
             </section>
         </section>
