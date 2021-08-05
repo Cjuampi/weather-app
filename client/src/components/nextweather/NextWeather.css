@@ -3,6 +3,23 @@
     width: 100vw;
     min-height: 100vh;
 }
+.containerHightLights{
+    text-align: left;
+}
+.listHightLights{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.titleHightLights{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 32px;
+    margin-top:40px;
+    margin-left: 10px;
+}
 
 @media screen and (min-width: 700px) {
     .containerNW {

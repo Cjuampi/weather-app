@@ -1,0 +1,39 @@
+.typeBOne{
+    width: 328px;
+    height: 204px;
+    background-color: #1E213A;
+    margin-bottom: 32px;
+}
+
+.firstBar{
+    width: 185px;
+    height: 8px;
+    background-color: white;
+    border-radius: 80px;
+}
+
+.secondBar{
+    height: 8px;
+    border-radius: 80px;
+    background-color: #FFEC65;
+}
+
+.typeBTwo{
+    width: 328px;
+    height: 160px;
+    background-color: #1E213A;
+    margin-bottom: 32px;
+}
+
+.createBy p{
+    margin-top: 40px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color:#A09FB1;
+}
+
+.createBy span{
+    font-weight: 700;
+}
