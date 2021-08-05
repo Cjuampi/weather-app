@@ -16,7 +16,7 @@ const HightLigthList = (props) =>{
                 </section>
                 <section className='typeBOne'>
                     <section className='humidity'>
-                    <span className='titleBx'>Humidity</span>
+                        <span className='titleBx'>Humidity</span>
                     </section>
                     <section className='pHumidity'>
                         <span className='middlBx'>{props.data.humidity}%</span>

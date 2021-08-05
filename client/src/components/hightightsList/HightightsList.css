@@ -1,4 +1,8 @@
 .typeBOne{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: 328px;
     height: 204px;
     background-color: #1E213A;
@@ -19,6 +23,10 @@
 }
 
 .typeBTwo{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     width: 328px;
     height: 160px;
     background-color: #1E213A;
@@ -36,4 +44,17 @@
 
 .createBy span{
     font-weight: 700;
+}
+
+
+.titleBx{
+    font-weight: 700;
+    font-size: 16px;
+    color:#E7E7EB;
+}
+
+.middlBx{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
 }
