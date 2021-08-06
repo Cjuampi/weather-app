@@ -2,7 +2,7 @@ import React from 'react'
 import './HightightsList.css'
 
 const HightLigthList = (props) =>{
-    console.log('hightlight....', props)
+    /* console.log('hightlight....', props) */
     return(
         <section className='cntListHL'>
             <section className='topBoxes'>

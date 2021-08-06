@@ -3,7 +3,7 @@ import images from '../../assets/dataFiles/imgData';
 import './NextDays.css'
 
 const NextDays = (props) =>{
-    console.log('elem props', props)
+    /* console.log('elem props', props) */
     return(
         <section className='boxDayWeather'>
             <section className='boxTitle'>
