@@ -3,7 +3,6 @@ import { valuesContext } from '../../contexts/weather.contexts'
 import './Cities.css'
 
 const Cities = (props) => {
-    //console.log('Cities props:', props)
     const { setCity, searcher, setSearcher} = useContext(valuesContext)
 
     const changeWOEID = () =>{

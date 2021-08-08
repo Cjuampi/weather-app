@@ -7,14 +7,11 @@ import './TodayWeather.css'
 
 
 const TodayWeather = () => {
-    //city has the woeid
     const { city, dataWeather,setDataWeather,typeG,  setCity} = useContext(valuesContext)
     const [ currentPos, setCurrentPos ] = useState({})
 
     const getDataCity = async () => {
-        console.log('la city ', city)
         let result = await axios.get(`/getWeatherCity/${city}`)
-       /*  console.log(result.data) */
         return result.data
     }
     
@@ -44,7 +41,6 @@ const TodayWeather = () => {
     useEffect(()=>{
         if(currentPos.hasOwnProperty('lat')){
             const excGeoCity = async ()=>{
-                console.log('coordens obj', currentPos)
                 let result = await axios.get(`/coordToCity/${currentPos.lat},${currentPos.lon}`)
                 return result.data.results[0].components.city
             }
@@ -71,7 +67,6 @@ const TodayWeather = () => {
             </section>
             <section className='containerInfoT'>
                 <section className='weatherImg'>
-                    {/* {console.log('dataWeather----',dataWeather[0])} */}
                     {dataWeather.length!==0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]}/>: null}
                 </section>
                 {typeG ?

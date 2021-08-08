@@ -25,12 +25,10 @@ const WeatherSearch = () =>{
     
     const getMatches = async() =>{
         let result =  await axios.get(`/searchMatches/${inputTxt}`)
-        /* console.log('resultados matchs',result.data) */
         return result.data
     }
 
     const showResutls = () =>{
-        console.log('ciudades',citiesS)
         return <ListCities data={citiesS}/>
     }
 

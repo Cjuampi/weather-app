@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Deg from '../../assets/dataFiles/compass'
 import './HightightsList.css'
 
 const HightLigthList = (props) =>{
-    /* console.log('hightlight....', props) */
+    const [ directionW, setDirectionW ] = useState(props.data.wind_direction_compass)
+
+    const renderDirection = () =>{
+        if(directionW){
+            return  <span className='material-icons'  style={{transform: `rotate(${Deg[directionW]}deg)`}}>navigation</span> 
+        }else{
+            return  <span className='material-icons'>navigation</span> 
+        }
+    } 
+    useEffect(()=>{
+        if(props.data.wind_direction_compass){
+            setDirectionW(props.data.wind_direction_compass)
+            renderDirection()
+        }
+    },[props.data.wind_direction_compass])
+
     return(
         <section className='cntListHL'>
             <section className='topBoxes'>
@@ -10,7 +26,9 @@ const HightLigthList = (props) =>{
                     <span className='titleBx'>Wind status</span>
                     <span className='middlBx'>{Math.round(props.data.wind_speed)} mph</span>
                     <section className='windDirection'>
-                        <span className='material-icons'>navigation</span>
+                        <section className='spanWD'>
+                            {renderDirection()}            
+                        </section>
                         <span className='txtDirection'>{props.data.wind_direction_compass}</span>
                     </section>
                 </section>

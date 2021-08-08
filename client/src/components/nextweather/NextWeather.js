@@ -19,14 +19,12 @@ const NextWeather = () =>{
 
     const renderNextDaysWeather = () =>{
         if(nextDaysData){
-            /* console.log('dtawEATHERLIST:',nextDaysData); */
             return <NextW data={nextDaysData}/>
         }
     }
 
     const renderTodayHL = () =>{
         if(nextDaysData.length!==0){
-            /* console.log('dtawHIGHTLIGHT:',nextDaysData) */
             return <HightL data={nextDaysData[0]}/>
         }
     } 
@@ -35,8 +33,6 @@ const NextWeather = () =>{
         if(dataWeather.length !== 0){
             let tmpA = dataWeather.consolidated_weather
             setNextDaysData(tmpA)
-/*             renderNextDaysWeather()
-            renderTodayHL() */
         }
     },[dataWeather])
 
@@ -58,7 +54,6 @@ const NextWeather = () =>{
             </section>
             <section className='containerHightLights'>
                 <section className='titleHightLights'>
-                    {console.log('para el title',nextDaysData)}
                     {nextDaysData.length===0?null:<span>Today's Hightlights</span>}
                 </section>
                 <section className='listHightLights'>

@@ -74,6 +74,23 @@
     justify-content: flex-end;
 }
 
+.windDirection{
+    display: flex;
+    align-items: center;
+}
+
+.spanWD{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:#585676;
+    margin-right: 6px;
+}
+
 @media screen and (min-width: 1200px) {
 
 /*     .cntListHL{

@@ -5,7 +5,7 @@ import './NextDays.css'
 
 const NextDays = (props) =>{
     const { typeG } = useContext(valuesContext)
-    //console.log('valor de typeG', typeG)
+
     return(
         <section className='boxDayWeather'>
             <section className='boxTitle'>
