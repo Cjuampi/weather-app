@@ -8,7 +8,7 @@ import './TodayWeather.css'
 
 const TodayWeather = () => {
     //city has the woeid
-    const { city, dataWeather,setDataWeather } = useContext(valuesContext)
+    const { city, dataWeather,setDataWeather,typeG } = useContext(valuesContext)
 
     const getDataCity = async () => {
         let result = await axios.get(`/getWeatherCity/${city}`)
@@ -43,9 +43,15 @@ const TodayWeather = () => {
                     {/* {console.log('dataWeather----',dataWeather[0])} */}
                     {dataWeather.length!==0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]}/>: null}
                 </section>
-                <section className='theTemp'>
-                    {dataWeather.length!==0? <span>{Math.round(`${dataWeather.consolidated_weather[0].the_temp}`)}<span id='symbTem'>&#8451;</span></span>: null}
-                </section>
+                {typeG ?
+                    <section className='theTemp'>
+                        {dataWeather.length !== 0 ? <span>{Math.round((`${dataWeather.consolidated_weather[0].the_temp}`*9/5) + 32)}<span id='symbTem'>&#8457;</span></span> : null}
+                    </section>
+                    :
+                    <section className='theTemp'>
+                        {dataWeather.length !== 0 ? <span>{Math.round(`${dataWeather.consolidated_weather[0].the_temp}`)}<span id='symbTem'>&#8451;</span></span> : null}
+                    </section>
+                }
                 <section className='weatherText'>
                     {dataWeather.length!==0? <span>{dataWeather.consolidated_weather[0].weather_state_name}</span>: null}
                 </section>
