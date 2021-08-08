@@ -17,6 +17,7 @@ const TodayWeather = () => {
     
     const getPosition = () =>{
             navigator.geolocation.getCurrentPosition(position => {
+            alert("lat: ",position.coords.latitude," lon: ",position.coords.longitude)
             setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
           });
         
