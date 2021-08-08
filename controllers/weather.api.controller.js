@@ -22,6 +22,14 @@ const wApi = {
         //console.log('el result', result)
         let data = await result.json()
         res.status(200).json(data)
+    },
+    getCity : async (req,res) =>{
+        
+        const [lat, lon] = req.params.coords.split(',')
+  
+        let result = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${process.env.KEYGEO}`)
+        let data = await result.json()
+        res.status(200).json(data)
     }
 }
 module.exports = wApi;

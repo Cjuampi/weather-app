@@ -6,7 +6,7 @@ import './SearchCity.css';
 
 const WeatherSearch = () =>{
     const { searcher, setSearcher } = useContext(valuesContext)
-    const [citiesS, setCitiesS] = useState([])
+    const [ citiesS, setCitiesS ] = useState([])
     const [ tmpinputTxt, setTmpInpuTxt ] = useState('')
     const [ inputTxt, setInpuTxt ] = useState('')
 
@@ -25,7 +25,7 @@ const WeatherSearch = () =>{
     
     const getMatches = async() =>{
         let result =  await axios.get(`/searchMatches/${inputTxt}`)
-        /* console.log(result.data) */
+        /* console.log('resultados matchs',result.data) */
         return result.data
     }
 

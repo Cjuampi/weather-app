@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import {valuesContext} from '../../contexts/weather.contexts'
 import ButtonSearch from '../searchButton/SearchButton'
@@ -8,14 +8,27 @@ import './TodayWeather.css'
 
 const TodayWeather = () => {
     //city has the woeid
-    const { city, dataWeather,setDataWeather,typeG } = useContext(valuesContext)
+    const { city, dataWeather,setDataWeather,typeG,  setCity} = useContext(valuesContext)
+    const [ currentPos, setCurrentPos ] = useState({})
 
     const getDataCity = async () => {
+        console.log('la city ', city)
         let result = await axios.get(`/getWeatherCity/${city}`)
        /*  console.log(result.data) */
         return result.data
     }
     
+    const getPosition = () =>{
+            navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
+          });
+        
+    }
+
+    const geoButton = async() =>{
+       getPosition()
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -28,13 +41,31 @@ const TodayWeather = () => {
         }
     }, [city])
 
+    useEffect(()=>{
+        if(currentPos.hasOwnProperty('lat')){
+            const excGeoCity = async ()=>{
+                console.log('coordens obj', currentPos)
+                let result = await axios.get(`/coordToCity/${currentPos.lat},${currentPos.lon}`)
+                return result.data.results[0].components.city
+            }
+            
+            const excWoedi = async() =>{
+                let cityName = await excGeoCity()
+                let result =  await axios.get(`/searchMatches/${cityName}`)
+                setCity(result.data[0]['woeid'])
+            }
+
+            excWoedi()
+        }
+    },[currentPos])
+
     return (
         <section className='containerTW'>
             <section className='containerHBttns'>
                 <section className='componentSBttn'>
                     <ButtonSearch />
                 </section>
-                <section className='componentLBttn'>
+                <section className='componentLBttn' onClick={geoButton}>
                     <span className="material-icons">my_location</span>
                 </section>
             </section>
