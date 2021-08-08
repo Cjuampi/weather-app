@@ -5,8 +5,14 @@ const cors = require('cors');
 const port = process.env.PORT || 5000
 require('dotenv').config()
 
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use(cors());
 app.use('/',router)
+
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 app.listen(port, ()=>{
     console.log('http://localhost:5000')

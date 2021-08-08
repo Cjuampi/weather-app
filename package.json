@@ -5,13 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cjuampi/weather-app.git"
   },
-  "author": "Juan Pablo",
+  "author": "Juampi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Cjuampi/weather-app/issues"
