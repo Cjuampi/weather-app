@@ -6,15 +6,17 @@ import './SearchCity.css';
 
 const WeatherSearch = () =>{
     const { searcher, setSearcher } = useContext(valuesContext)
-    const [citiesS, setCitiesS] = useState([])
+    const [ citiesS, setCitiesS ] = useState([])
     const [ tmpinputTxt, setTmpInpuTxt ] = useState('')
     const [ inputTxt, setInpuTxt ] = useState('')
+    const [ existC, setExistC ] = useState(false)
 
     const activateSearch = () =>{
         setSearcher(!searcher)
     }
 
     const catchInput = (e) =>{
+        setExistC(false)
         setTmpInpuTxt(e.target.value)
     }
 
@@ -25,12 +27,11 @@ const WeatherSearch = () =>{
     
     const getMatches = async() =>{
         let result =  await axios.get(`/searchMatches/${inputTxt}`)
-        /* console.log(result.data) */
         return result.data
+
     }
 
     const showResutls = () =>{
-        console.log('ciudades',citiesS)
         return <ListCities data={citiesS}/>
     }
 
@@ -38,24 +39,32 @@ const WeatherSearch = () =>{
         if(inputTxt){
             const excGetData = async () =>{
                 let result = await getMatches()
-                setCitiesS(result)
+                if (result.length !== 0){
+                    setCitiesS(result)
+                }else{
+                    setExistC(true)
+                }
             }
 
             excGetData()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[inputTxt])
 
 
     return(
         <section className='containerWS'>
             <section className='closeBttn'>
-                <span onClick={activateSearch}>X</span>
+                <span className='material-icons' onClick={activateSearch} >close</span>
             </section>
             <section className='containerForm'>
                 <form onSubmit={onSubmitInput}>
-                    <input type='text' placeholder='City' onChange={catchInput}/>
-                    <input type='submit' value='Buscar'/>
+                    <input type='text' placeholder='Search Location' onChange={catchInput} id='inputSCity' />
+                    <input type='submit' className ='searchBttnLeft' value='Search' id='submitBttn'/>
                 </form>
+            </section>
+            <section className='notExist'>
+                {existC===true?<h4> Ayeee! The city is not available in the API</h4>:null}
             </section>
             <section className='containerResult'>
                 {citiesS?showResutls():null}

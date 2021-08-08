@@ -6,7 +6,7 @@ import {valuesContext} from '../../contexts/weather.contexts'
 import './WeatherMain.css'
 
 const WeatherMain = () => {
-    const { searcher, setSearcher } = useContext(valuesContext)
+    const { searcher } = useContext(valuesContext)
 
     return (
         <section className='containerWM'>
@@ -15,7 +15,7 @@ const WeatherMain = () => {
                     <TodayW />
                 </section>
             ):(
-                <section>
+                <section className='todayWeather'>
                     <SearchCity/>
                 </section>
             )}

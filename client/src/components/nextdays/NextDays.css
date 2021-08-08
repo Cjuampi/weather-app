@@ -1,0 +1,40 @@
+.boxDayWeather{
+/*     display: flex;
+    flex-wrap: wrap; */
+    width: 120px;
+    height: 177px;
+    background-color: #1E213A;
+    margin-bottom: 32px;
+    margin-right: 26px;
+}
+
+.boxTitle{
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    color:#E7E7EB;
+    padding-top: 18px ;
+    padding-bottom: 10px;
+}
+
+.boxImage img{
+    width: 56.44px;
+    height: 62px;
+    margin-bottom: 31px;
+}
+
+.maxTemp{
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color:#E7E7EB;
+    padding-right: 16px;
+}
+
+.minTemp{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color:#A09FB1;
+}

@@ -5,12 +5,5 @@
     padding-left:  12px;
     padding-right: 12px;
     padding-top: 38px;
-    overflow: auto;
-}
-
-.nameCity >p {
-    margin: 0px;
-    padding-left: 12px;
-    padding-top: 23px;
-    padding-bottom: 23px;
+    cursor: pointer;
 }

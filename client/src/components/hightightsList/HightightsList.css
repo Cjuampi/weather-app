@@ -1,0 +1,118 @@
+.typeBOne{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 328px;
+    height: 204px;
+    background-color: #1E213A;
+    margin-bottom: 32px;
+}
+
+.firstBar{
+    width: 185px;
+    height: 8px;
+    background-color: white;
+    border-radius: 80px;
+}
+
+.secondBar{
+    height: 8px;
+    border-radius: 80px;
+    background-color: #FFEC65;
+}
+
+.typeBTwo{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 328px;
+    height: 160px;
+    background-color: #1E213A;
+    margin-bottom: 32px;
+}
+
+.createBy p{
+    margin-top: 40px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color:#A09FB1;
+}
+
+.createBy span{
+    font-weight: 700;
+}
+
+
+.titleBx{
+    font-weight: 700;
+    font-size: 16px;
+    color:#E7E7EB;
+}
+
+.middlBx{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+.hpercentage{
+    display: flex;
+    justify-content: space-between
+}
+.nhpercentage{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    color:#A09FB1;
+}
+.symbol{
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+.windDirection{
+    display: flex;
+    align-items: center;
+}
+
+.spanWD{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:#585676;
+    margin-right: 6px;
+}
+
+@media screen and (min-width: 1200px) {
+
+/*     .cntListHL{
+        display: flex;
+        flex-direction: column;
+    } */
+    .topBoxes{
+        display: flex;
+        flex-direction: row;
+    }
+    .bottomBoxes{
+        display: flex;
+        flex-direction: row;
+    }
+    .typeBOne {
+        margin-left: 0px;
+        margin-right: 48px;
+    }
+    .typeBTwo{
+        margin-left: 0px;
+        margin-right: 48px;
+    }
+    
+  }

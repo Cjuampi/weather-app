@@ -6,10 +6,17 @@ import { useState } from 'react';
 
 function App() {
   const [ city, setCity ] = useState('')
+  const [ typeG, setTypeG ] = useState(false)
+  const [ cityName,setCityName ] = useState('')
   const [ searcher, setSearcher ] = useState(false)
+  const [ dataWeather, setDataWeather ] = useState([])
   
   const cntxvalues = {
-    city,setCity,searcher,setSearcher
+    city,setCity,
+    cityName, setCityName,
+    searcher,setSearcher,
+    dataWeather,setDataWeather,
+    typeG, setTypeG
   }
 
   return (
