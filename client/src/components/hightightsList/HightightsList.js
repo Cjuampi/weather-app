@@ -17,6 +17,7 @@ const HightLigthList = (props) =>{
             setDirectionW(props.data.wind_direction_compass)
             renderDirection()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.data.wind_direction_compass])
 
     return(

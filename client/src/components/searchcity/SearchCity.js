@@ -48,6 +48,7 @@ const WeatherSearch = () =>{
 
             excGetData()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[inputTxt])
 
 

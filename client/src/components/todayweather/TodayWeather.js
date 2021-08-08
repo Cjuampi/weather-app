@@ -35,6 +35,7 @@ const TodayWeather = () => {
             }
             excGetData()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [city])
 
     useEffect(()=>{
@@ -56,6 +57,7 @@ const TodayWeather = () => {
 
             excWoedi()
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[currentPos])
 
     return (
@@ -70,7 +72,7 @@ const TodayWeather = () => {
             </section>
             <section className='containerInfoT'>
                 <section className='weatherImg'>
-                    {dataWeather.length!==0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]}/>: null}
+                    {dataWeather.length!==0? <img src={imagenes[`${dataWeather.consolidated_weather[0].weather_state_abbr}`]} alt={dataWeather.consolidated_weather[0].weather_state_name}/>: null}
                 </section>
                 {typeG ?
                     <section className='theTemp'>

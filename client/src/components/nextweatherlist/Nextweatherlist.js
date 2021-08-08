@@ -7,10 +7,14 @@ const NextWeatherList = (props) =>{
     const daysList = () =>{
         return props.data.map((ele,index) =>{
             if(index > 0 ){
-                return <Days key={index} data={ele}/>
+                return <Days key={index} data={ele} pos={index}/>
+            }else{
+                return null
             }
         })
     }
+
+
 
     return(
         <section className='containerListNextW'>

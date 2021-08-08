@@ -10,7 +10,7 @@
 
 .boxTitle{
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color:#E7E7EB;
     padding-top: 18px ;
@@ -26,7 +26,7 @@
 .maxTemp{
     font-family: Raleway;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color:#E7E7EB;
     padding-right: 16px;
@@ -34,7 +34,7 @@
 
 .minTemp{
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color:#A09FB1;
 }

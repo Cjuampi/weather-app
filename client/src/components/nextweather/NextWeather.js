@@ -6,7 +6,7 @@ import './NextWeather.css'
 
 const NextWeather = () =>{
 
-    const { city, dataWeather, setTypeG } = useContext(valuesContext)
+    const {  dataWeather, setTypeG } = useContext(valuesContext)
     const [ nextDaysData, setNextDaysData] = useState([])
 
     const changeToTypeC = () =>{

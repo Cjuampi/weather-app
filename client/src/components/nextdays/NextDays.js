@@ -9,11 +9,15 @@ const NextDays = (props) =>{
     return(
         <section className='boxDayWeather'>
             <section className='boxTitle'>
-                <span>
-                    {new Date(props.data.applicable_date).toLocaleString("en-US", { weekday: "short" })}, 
-                    {new Date(props.data.applicable_date).getDate() + " "}
-                    {new Date(props.data.applicable_date).toLocaleString("en-US", { month: "short" })}
-                </span>
+                {props.pos !== 1 ?
+                    <span>
+                        {new Date(props.data.applicable_date).toLocaleString("en-US", { weekday: "short" })},
+                        {new Date(props.data.applicable_date).getDate() + " "}
+                        {new Date(props.data.applicable_date).toLocaleString("en-US", { month: "short" })}
+                    </span>
+                    :
+                    <span>Tomorrow</span>
+                }
             </section>
             <section className='boxImage'>
                 {<img src={images[`${props.data.weather_state_abbr}`]} alt={props.data.weather_state_name}/>}
