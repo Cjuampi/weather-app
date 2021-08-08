@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import images from '../../assets/dataFiles/imgData';
+import { valuesContext } from '../../contexts/weather.contexts';
 import './NextDays.css'
 
 const NextDays = (props) =>{
-    /* console.log('elem props', props) */
+    const { typeG } = useContext(valuesContext)
+    console.log('valor de typeG', typeG)
     return(
         <section className='boxDayWeather'>
             <section className='boxTitle'>
@@ -16,9 +18,13 @@ const NextDays = (props) =>{
             <section className='boxImage'>
                 {<img src={images[`${props.data.weather_state_abbr}`]} alt={props.data.weather_state_name}/>}
             </section>
-            <section className='boxMxMn'>
-                <span className='maxTemp'> {Math.round(props.data.max_temp)}&#8451;</span>
-                <span className='minTemp'>{Math.round(props.data.min_temp)}&#8451;</span>
+            <section className='boxMxMn'>           
+                {typeG?<span className='maxTemp'> {Math.round((props.data.max_temp *9/5) + 32)}&#8457;</span>:
+                    <span className='maxTemp'> {Math.round(props.data.max_temp)}&#8451;</span>
+                }
+                {typeG?<span className='minTemp'>{Math.round((props.data.min_temp * 9/5) +32 )}&#8457;</span>:
+                    <span className='minTemp'>{Math.round(props.data.min_temp)}&#8451;</span>
+                }
             </section>
         </section>
     );

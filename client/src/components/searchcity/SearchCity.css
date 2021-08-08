@@ -12,10 +12,15 @@
     justify-content: flex-end;
     padding-top: 5px;
     padding-right: 10px;
+    cursor: pointer;
 }
 .containerForm{
     margin-top: 17px;
 }
+.searchBttnLeft{
+    cursor: pointer;
+}
+
 #inputSCity {
     border: 1px solid #E7E7EB;
     width: 252px;

@@ -6,9 +6,16 @@ import './NextWeather.css'
 
 const NextWeather = () =>{
 
-
-    const { city, dataWeather } = useContext(valuesContext)
+    const { city, dataWeather, setTypeG } = useContext(valuesContext)
     const [ nextDaysData, setNextDaysData] = useState([])
+
+    const changeToTypeC = () =>{
+        setTypeG(false)
+    }
+
+    const changeToTypeF = () =>{
+        setTypeG(true)
+    }
 
     const renderNextDaysWeather = () =>{
         if(nextDaysData){
@@ -39,10 +46,10 @@ const NextWeather = () =>{
             <section className='containerNextListW'>
                 {nextDaysData.length===0?null:
                     <section className='changeM'>
-                        <section className='sectionC'>
+                        <section className='sectionC' onClick={changeToTypeC}>
                             <span>&#8451;</span>
                         </section>
-                        <section className='sectionF'>
+                        <section className='sectionF' onClick={changeToTypeF}>
                             <span>&#8457;</span>
                         </section>
                     </section>

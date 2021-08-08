@@ -54,7 +54,7 @@
         font-weight: bold;
         font-size: 18px;
         background-color:#E7E7EB;
-        
+        cursor: pointer; 
     }
     .sectionF {
         display: flex;
@@ -68,5 +68,7 @@
         font-weight: bold;
         font-size: 18px;
         background-color:#585676;
+        cursor: pointer; 
     }
+
   }

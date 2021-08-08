@@ -21,7 +21,10 @@
     height: 40px;
     background-color:#6E707A;
     border-radius: 50%;
+    cursor: pointer; 
 }
+
+
 
 .containerInfoT{
     display: flex;

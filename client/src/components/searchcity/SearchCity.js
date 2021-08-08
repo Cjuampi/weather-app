@@ -54,7 +54,7 @@ const WeatherSearch = () =>{
             <section className='containerForm'>
                 <form onSubmit={onSubmitInput}>
                     <input type='text' placeholder='Search Location' onChange={catchInput} id='inputSCity' />
-                    <input type='submit' value='Search' id='submitBttn'/>
+                    <input type='submit' className ='searchBttnLeft' value='Search' id='submitBttn'/>
                 </form>
             </section>
             <section className='containerResult'>
