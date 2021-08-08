@@ -64,7 +64,7 @@ const WeatherSearch = () =>{
                 </form>
             </section>
             <section className='notExist'>
-                {existC===true?<h4> Ayeee! The city is not available in the API</h4>:null}
+                {existC===true?<h4> Ayeee! We don't have the weather for your city</h4>:null}
             </section>
             <section className='containerResult'>
                 {citiesS?showResutls():null}
