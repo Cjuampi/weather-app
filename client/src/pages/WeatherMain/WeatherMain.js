@@ -15,7 +15,7 @@ const WeatherMain = () => {
                     <TodayW />
                 </section>
             ):(
-                <section>
+                <section className='todayWeather'>
                     <SearchCity/>
                 </section>
             )}

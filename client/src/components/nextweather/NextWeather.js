@@ -37,11 +37,20 @@ const NextWeather = () =>{
     return(
         <section className='containerNW'>
             <section className='containerNextListW'>
+                <section className='changeM'>
+                    <section className='sectionC'>
+                        <span>&#8451;</span>
+                    </section>
+                    <section className='sectionF'>
+                        <span>&#8457;</span>
+                    </section>
+                </section>
                 {renderNextDaysWeather()}
             </section>
             <section className='containerHightLights'>
                 <section className='titleHightLights'>
-                    <span>Today's Hightlights</span>
+                    {console.log('para el title',nextDaysData)}
+                    {nextDaysData.length===0?null:<span>Today's Hightlights</span>}
                 </section>
                 <section className='listHightLights'>
                     {renderTodayHL()}

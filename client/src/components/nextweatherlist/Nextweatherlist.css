@@ -4,3 +4,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+@media screen and (min-width: 1200px) {
+     .containerListNextW {
+        padding-left: 0px;
+    }
+  }

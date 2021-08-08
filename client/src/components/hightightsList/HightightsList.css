@@ -58,3 +58,28 @@
     font-weight: bold;
     font-size: 64px;
 }
+
+@media screen and (min-width: 1200px) {
+
+/*     .cntListHL{
+        display: flex;
+        flex-direction: column;
+    } */
+    .topBoxes{
+        display: flex;
+        flex-direction: row;
+    }
+    .bottomBoxes{
+        display: flex;
+        flex-direction: row;
+    }
+    .typeBOne {
+        margin-left: 0px;
+        margin-right: 48px;
+    }
+    .typeBTwo{
+        margin-left: 0px;
+        margin-right: 48px;
+    }
+    
+  }

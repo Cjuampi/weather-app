@@ -9,10 +9,21 @@
     background-color: #100E1D;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1200px) {
     .containerWM {
         /* display: flex; */
         flex-direction: row;
         flex-wrap:nowrap;
+        
+    }
+    .todayWeather{
+        width: 25%;
+    }
+    .nextWeather{
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        justify-items: center;
+        width: 75%;
     }
   }

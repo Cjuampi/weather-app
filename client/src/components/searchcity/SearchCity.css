@@ -1,7 +1,7 @@
 @import '~material-design-icons/iconfont/material-icons.css';
 
 .containerWS{
-    max-width: 414px;
+    /* max-width: 414px; */
     min-height: 100vh;
     background-color: #1E213A;
     /* display: none; */
