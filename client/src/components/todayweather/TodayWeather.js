@@ -9,7 +9,7 @@ import './TodayWeather.css'
 const TodayWeather = () => {
     const { city, dataWeather,setDataWeather,typeG,  setCity} = useContext(valuesContext)
     const [ currentPos, setCurrentPos ] = useState({})
-
+    const [ existC, setExistC ] = useState(false)
     const getDataCity = async () => {
         let result = await axios.get(`/getWeatherCity/${city}`)
         return result.data
@@ -17,7 +17,6 @@ const TodayWeather = () => {
     
     const getPosition = () =>{
             navigator.geolocation.getCurrentPosition(position => {
-            const { latitude, longitude } = position.coords;
             setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
           });
         
@@ -48,7 +47,11 @@ const TodayWeather = () => {
             const excWoedi = async() =>{
                 let cityName = await excGeoCity()
                 let result =  await axios.get(`/searchMatches/${cityName}`)
-                setCity(result.data[0]['woeid'])
+                if (result.data[0]['woeid']){
+                    setCity(result.data[0]['woeid'])
+                }else{
+                    setExistC(true)
+                }
             }
 
             excWoedi()
@@ -93,6 +96,9 @@ const TodayWeather = () => {
                     {dataWeather.length!==0?<span className="material-icons">location_on</span>: null}
                     {dataWeather.length!==0? <span>{dataWeather.title}</span>: null}
                 </section>
+            </section>
+            <section className='notExist'>
+                {existC===true?<h4>Ayeee! Data is no available for your city!</h4>:null}
             </section>
         </section>
     );

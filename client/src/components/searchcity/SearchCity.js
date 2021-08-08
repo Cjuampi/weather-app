@@ -9,12 +9,14 @@ const WeatherSearch = () =>{
     const [ citiesS, setCitiesS ] = useState([])
     const [ tmpinputTxt, setTmpInpuTxt ] = useState('')
     const [ inputTxt, setInpuTxt ] = useState('')
+    const [ existC, setExistC ] = useState(false)
 
     const activateSearch = () =>{
         setSearcher(!searcher)
     }
 
     const catchInput = (e) =>{
+        setExistC(false)
         setTmpInpuTxt(e.target.value)
     }
 
@@ -26,6 +28,7 @@ const WeatherSearch = () =>{
     const getMatches = async() =>{
         let result =  await axios.get(`/searchMatches/${inputTxt}`)
         return result.data
+
     }
 
     const showResutls = () =>{
@@ -36,7 +39,11 @@ const WeatherSearch = () =>{
         if(inputTxt){
             const excGetData = async () =>{
                 let result = await getMatches()
-                setCitiesS(result)
+                if (result.length !== 0){
+                    setCitiesS(result)
+                }else{
+                    setExistC(true)
+                }
             }
 
             excGetData()
@@ -54,6 +61,9 @@ const WeatherSearch = () =>{
                     <input type='text' placeholder='Search Location' onChange={catchInput} id='inputSCity' />
                     <input type='submit' className ='searchBttnLeft' value='Search' id='submitBttn'/>
                 </form>
+            </section>
+            <section className='notExist'>
+                {existC===true?<h4> Ayeee! The city is not available in the API</h4>:null}
             </section>
             <section className='containerResult'>
                 {citiesS?showResutls():null}
