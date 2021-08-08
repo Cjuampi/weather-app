@@ -22,8 +22,16 @@ const HightLigthList = (props) =>{
                         <span className='middlBx'>{props.data.humidity}%</span>
                     </section>
                     <section className='humidityBar'>
+                        <section className='hpercentage'>
+                            <section className='nhpercentage'>0</section>
+                            <section className='nhpercentage'>50</section>
+                            <section className='nhpercentage'>100</section>
+                        </section>
                         <section className='firstBar'>
                             <section className='secondBar' style={{width : `${props.data.humidity}%`}}></section>
+                        </section>
+                        <section className='symbol'>
+                            <section className='nhpercentage'>%</section>
                         </section>
                     </section>
                 </section>

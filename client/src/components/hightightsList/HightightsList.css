@@ -59,6 +59,21 @@
     font-size: 64px;
 }
 
+.hpercentage{
+    display: flex;
+    justify-content: space-between
+}
+.nhpercentage{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    color:#A09FB1;
+}
+.symbol{
+    display: flex;
+    justify-content: flex-end;
+}
+
 @media screen and (min-width: 1200px) {
 
 /*     .cntListHL{
