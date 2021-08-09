@@ -17,14 +17,21 @@ const TodayWeather = () => {
     alert('test alerta')
     
     const getPosition = () =>{
+        alert('entramos en la fgetposition')
+        if (navigator && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
             alert("lat: ",position.coords.latitude," lon: ",position.coords.longitude)
             setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
+
           });
+        }else{
+            alert('geo no soportada') 
+        }
         
     }
 
     const geoButton = async() =>{
+        alert('click en el geolation')
        getPosition()
     }
 
