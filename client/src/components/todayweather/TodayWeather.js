@@ -21,9 +21,10 @@ const TodayWeather = () => {
         if (navigator && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
             alert("lat: ",position.coords.latitude," lon: ",position.coords.longitude)
-            setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
-
-          });
+             setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
+          }, err => {
+            alert('ERROR: ' + err.code);
+        });
         }else{
             alert('geo no soportada') 
         }
