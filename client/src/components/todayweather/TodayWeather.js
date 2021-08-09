@@ -14,25 +14,22 @@ const TodayWeather = () => {
         let result = await axios.get(`/getWeatherCity/${city}`)
         return result.data
     }
-    alert('test alerta')
+
     
-    const getPosition = () =>{
-        alert('entramos en la fgetposition')
+    const getPosition = () => {
         if (navigator && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(position => {
-            alert("lat: ",position.coords.latitude," lon: ",position.coords.longitude)
-             setCurrentPos({"lat":position.coords.latitude,"lon":position.coords.longitude})   
-          }, err => {
-            alert('ERROR: ' + err.code);
-        });
-        }else{
-            alert('geo no soportada') 
+                setCurrentPos({ "lat": position.coords.latitude, "lon": position.coords.longitude })
+            }, err => {
+                alert(`ERROR(${err.code}): ${err.message}`);
+            });
+        } else {
+            alert('geo no soportada')
         }
-        
+
     }
 
     const geoButton = async() =>{
-        alert('click en el geolation')
        getPosition()
     }
 
@@ -49,19 +46,15 @@ const TodayWeather = () => {
     }, [city])
 
     useEffect(()=>{
-        alert('test fuera usEfct')
         if(currentPos.hasOwnProperty('lat')){
-            alert('test dentro usEfct')
             const excGeoCity = async ()=>{
                 let result = await axios.get(`/coordToCity/${currentPos.lat},${currentPos.lon}`)
-                alert(result.data.results[0].components.city)
                 return result.data.results[0].components.city
             }
             
             const excWoedi = async() =>{
                 let cityName = await excGeoCity()
                 let result =  await axios.get(`/searchMatches/${cityName}`)
-                alert(result.data[0]['woeid'])
                 if (result.data[0]['woeid']){
                     setCity(result.data[0]['woeid'])
                 }else{
