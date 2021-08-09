@@ -65,7 +65,7 @@ const HightLigthList = (props) =>{
                     <span className='middlBx'>{Math.round(props.data.air_pressure)} mb</span>
                 </section>
             </section>
-            <section className='createBy'><p>created by <span>Juampi</span> - devChallenges.io</p></section>
+            <section className='createBy'><p>created by <a href='https://github.com/Cjuampi/weather-app'><span>Juampi</span></a> - <a href='https://devchallenges.io/'>devChallenges.io</a></p></section>
         </section>
     );
 }

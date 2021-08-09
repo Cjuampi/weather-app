@@ -44,6 +44,7 @@
 
 .createBy span{
     font-weight: 700;
+    text-decoration: underline;
 }
 
 
@@ -91,6 +92,25 @@
     background-color:#585676;
     margin-right: 6px;
 }
+
+a:visited {
+    color: #A09FB1;
+  }
+  
+  a:hover {
+    color: #A09FB1;
+  }
+  
+  a:active {
+    color: #A09FB1;
+  }
+
+a:link {
+    color: #A09FB1;
+    text-decoration: none;
+  }
+  
+
 
 @media screen and (min-width: 1200px) {
 
